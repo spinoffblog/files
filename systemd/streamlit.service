@@ -1,0 +1,12 @@
+[Unit]
+Description=Streamlit App
+After=network.target
+
+[Service]
+User=streamlit_user
+WorkingDirectory=/opt/streamlit_app
+ExecStart=/opt/streamlit_app/venv/bin/streamlit run https://raw.githubusercontent.com/spinoffblog/blog/master/app.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
